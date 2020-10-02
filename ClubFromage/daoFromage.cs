@@ -14,5 +14,16 @@ namespace ClubFromage
             string query = "Fromage VALUES " + "(" + unFromage.getIdentifiant() + "," + unFromage.getIdPays() + ",'"+unFromage.getNom()+"','"+unFromage.getDureeAffinage()+"','"+unFromage.getDateCreation()+"','"+unFromage.getImage()+"','"+unFromage.getRecette()+"','"+unFromage.getHistoire()+"');";
             dbalfromage.Insert(query);
         }
+
+        public void Update()
+        {
+
+        }
+
+        public void Delete(Fromage unFromage)
+        {
+            string query = "Fromage WHERE identifiant = " + unFromage.getIdentifiant() + ";";
+            dbalfromage.Delete(query);
+        }
     }
 }

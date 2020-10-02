@@ -19,5 +19,11 @@ namespace ClubFromage
         {
 
         }
+
+        public void Delete(Pays unPays)
+        {
+            string query = "Pays WHERE idPays = " + unPays.getIdPays()+";";
+            dbalpays.Delete(query);
+        }
     }
 }
