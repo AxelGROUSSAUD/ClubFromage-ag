@@ -80,18 +80,33 @@ namespace ClubFromage
         }
         
         //Insert statement
-        public void Insert(string nomTable,)
+        public void Insert(string query)
         {
-            
 
-            
+            query = "INSERT INTO " + query;
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //create mysql command
+                MySqlCommand cmd = new MySqlCommand();
+                //Assign the query using CommandText
+                cmd.CommandText = query;
+                //Assign the connection using Connection
+                cmd.Connection = connection;
+
+                //Execute query
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
         }
 
         //Update statement
         public void Update(string query)
         {
-            
 
+            query = "UPDATE " + query;
             //Open connection
             if (this.OpenConnection() == true)
             {
@@ -113,7 +128,7 @@ namespace ClubFromage
         //Delete statement
         public void Delete(string query)
         {
-           
+            query = "DELETE FROM " + query;
 
             if (this.OpenConnection() == true)
             {
@@ -171,5 +186,7 @@ namespace ClubFromage
                 this.CloseConnection();
             }
         }
+
+        
     }
 }

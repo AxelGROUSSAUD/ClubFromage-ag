@@ -16,13 +16,16 @@ namespace ClubFromage
             //clubfromage.Insert(requetesql);
             requetesql = "SELECT * FROM Pays;";
             //clubfromage.Select(requetesql);
-            requetesql = "UPDATE Pays SET nom = 'Brezil' WHERE id=1 ;";
+            requetesql = " Pays SET nom = 'Brezil' WHERE id=1 ;";
             //clubfromage.Update(requetesql);
-            requetesql = "DELETE FROM Pays WHERE id = 3;";
+            requetesql = " Pays WHERE idPays = 1;";
             //clubfromage.Delete(requetesql);
 
-            requetesql = "DELETE FROM Pays WHERE id = 25;";
-            clubfromage.ExecQuery(requetesql);
+            requetesql = " Pays VALUES (1,'France');";
+            requetesql = "SELECT * FROM Pays;";
+            requetesql = " Pays SET nom = 'Brezil' WHERE idPays=1 ;";
+            requetesql = " Pays WHERE idPays = 1;";
+            clubfromage.Delete(requetesql);
         }
     }
 }
