@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ClubFromage
 {
     class Program
@@ -25,7 +26,16 @@ namespace ClubFromage
             requetesql = "SELECT * FROM Pays;";
             requetesql = " Pays SET nom = 'Brezil' WHERE idPays=1 ;";
             requetesql = " Pays WHERE idPays = 1;";
-            clubfromage.Delete(requetesql);
+            //clubfromage.Delete(requetesql);
+            Pays unPays = new Pays(3, "Belgique");
+            daoPays undaoPays = new daoPays();
+            daoFromage undaofromage = new daoFromage();
+            //undaoPays.Insert(unPays);
+            DateTime unedate = new DateTime(0 , 0 , 0,15,0,0);
+            DateTime uneautredate = new DateTime(2000, 5, 25);
+            //Console.WriteLine(unedate);
+            Fromage camenbert = new Fromage(15,3,"camenbert",unedate, uneautredate,"frapper le lait","un laitier ...");
+            undaofromage.Insert(camenbert);
         }
     }
 }
