@@ -93,7 +93,7 @@ namespace ClubFromage
                 cmd.CommandText = query;
                 //Assign the connection using Connection
                 cmd.Connection = connection;
-
+                Console.WriteLine(query);
                 //Execute query
                 cmd.ExecuteNonQuery();
 

@@ -27,14 +27,14 @@ namespace ClubFromage
             requetesql = " Pays SET nom = 'Brezil' WHERE idPays=1 ;";
             requetesql = " Pays WHERE idPays = 1;";
             //clubfromage.Delete(requetesql);
-            Pays unPays = new Pays(3, "Belgique");
+            Pays unPays = new Pays(4, "Belgique");
             daoPays undaoPays = new daoPays();
             daoFromage undaofromage = new daoFromage();
-            //undaoPays.Insert(unPays);
-            DateTime unedate = new DateTime(0 , 0 , 0,15,0,0);
-            DateTime uneautredate = new DateTime(2000, 5, 25);
+            undaoPays.Insert(unPays);
+            //DateTime unedate = new DateTime(0 , 0 , 0,15,0,0);
+            //DateTime uneautredate = new DateTime(2000, 5, 25);
             //Console.WriteLine(unedate);
-            Fromage camenbert = new Fromage(15,3,"camenbert",unedate, uneautredate,"frapper le lait","un laitier ...");
+            Fromage camenbert = new Fromage(15,4,"camenbert","0/0/0 15:00:00", "2000-05-25","frapper le lait","un laitier ...");
             undaofromage.Insert(camenbert);
         }
     }
