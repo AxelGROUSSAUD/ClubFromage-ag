@@ -30,11 +30,15 @@ namespace ClubFromage
             Pays unPays = new Pays(4, "Belgique");
             daoPays undaoPays = new daoPays();
             daoFromage undaofromage = new daoFromage();
-            undaoPays.Insert(unPays);
+            //undaoPays.Insert(unPays);
             //DateTime unedate = new DateTime(0 , 0 , 0,15,0,0);
             //DateTime uneautredate = new DateTime(2000, 5, 25);
             //Console.WriteLine(unedate);
-            Fromage camenbert = new Fromage(15,4,"camenbert","0/0/0 15:00:00", "2000-05-25","frapper le lait","un laitier ...");
+            DateTime DureeAffinage = new DateTime(0, 0, 0, 15, 0, 0);
+            DateTime DateCreation = new DateTime(2000, 5, 25);
+            Fromage camenbert = new Fromage(15, 4, "camenbert", DureeAffinage,DateCreation, "le lait ...", "un laitier ...");
+            //undaoPays.Delete(unPays);
+
             undaofromage.Insert(camenbert);
         }
     }

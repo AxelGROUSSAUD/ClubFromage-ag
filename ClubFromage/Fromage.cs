@@ -11,13 +11,13 @@ namespace ClubFromage
         private int _identifiant;
         private int _idPays;
         private string _nom;
-        private string _DureeAffinage;
-        private string _DateCreation;
+        private DateTime _DureeAffinage;
+        private DateTime _DateCreation;
         private string _image;
         private string _recette;
         private string _histoire;
 
-        public Fromage(int unIdentifiant,int unIdPays, string unNom, string uneDureeAffinage, string uneDateCreation,string uneRecette , string uneHistoire  )
+        public Fromage(int unIdentifiant,int unIdPays, string unNom, DateTime uneDureeAffinage, DateTime uneDateCreation,string uneRecette , string uneHistoire  )
         {
             _identifiant = unIdentifiant;
             _idPays = unIdPays;
@@ -45,12 +45,12 @@ namespace ClubFromage
             return _nom;
         }
 
-        public string getDureeAffinage()
+        public DateTime getDureeAffinage()
         {
             return _DureeAffinage;
         }
 
-        public string getDateCreation()
+        public DateTime getDateCreation()
         {
             return _DateCreation;
         }
@@ -87,12 +87,12 @@ namespace ClubFromage
             _nom = unNom;
         }
 
-        public void setDureeAffinage(string uneDureeAffinage)
+        public void setDureeAffinage(DateTime uneDureeAffinage)
         {
             _DureeAffinage = uneDureeAffinage;
         }
 
-        public void setDateCreation(string uneDateCreation)
+        public void setDateCreation(DateTime uneDateCreation)
         {
             _DateCreation = uneDateCreation;
         }
