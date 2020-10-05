@@ -12,6 +12,13 @@ namespace ClubFromage
         private string _nom;
 
 
+        public Pays()
+        {
+            _idPays = 0;
+            _nom = "";
+        }
+
+
         public Pays(int unIdPays , string unNomPays)
         {
             _idPays = unIdPays;

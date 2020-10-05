@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CsvHelper;
+using System.Globalization;
+using Ubiety.Dns.Core.Records;
 
 namespace ClubFromage
 {
@@ -30,6 +34,20 @@ namespace ClubFromage
         {
             string query = "Pays WHERE idPays = " + unPays.getIdPays()+";";
             this._DBAL.Delete(query);
+        }
+
+        public void InsertByFile(string Chemin)
+        {
+            using (var reader = new StreamReader(Chemin)) 
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                var record = new Pays();
+                var records = csv.EnumerateRecords(record);
+                foreach (Pays p in records)
+                {
+                    Insert(p);
+                }
+            }
         }
     }
 }

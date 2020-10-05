@@ -60,3 +60,9 @@ D:\Axel_Groussaud\Projets.Exercices_visual_studio\ClubFromage\ClubFromage\obj\De
 D:\Axel_Groussaud\Projets.Exercices_visual_studio\ClubFromage\ClubFromage\obj\Debug\ClubFromage.csproj.CopyComplete
 D:\Axel_Groussaud\Projets.Exercices_visual_studio\ClubFromage\ClubFromage\obj\Debug\ClubFromage.exe
 D:\Axel_Groussaud\Projets.Exercices_visual_studio\ClubFromage\ClubFromage\obj\Debug\ClubFromage.pdb
+D:\Axel_Groussaud\Projets.Exercices_visual_studio\ClubFromage\ClubFromage\bin\Debug\CsvHelper.dll
+D:\Axel_Groussaud\Projets.Exercices_visual_studio\ClubFromage\ClubFromage\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Axel_Groussaud\Projets.Exercices_visual_studio\ClubFromage\ClubFromage\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Axel_Groussaud\Projets.Exercices_visual_studio\ClubFromage\ClubFromage\bin\Debug\CsvHelper.xml
+D:\Axel_Groussaud\Projets.Exercices_visual_studio\ClubFromage\ClubFromage\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Axel_Groussaud\Projets.Exercices_visual_studio\ClubFromage\ClubFromage\bin\Debug\System.Threading.Tasks.Extensions.xml

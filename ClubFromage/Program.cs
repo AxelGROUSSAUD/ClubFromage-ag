@@ -41,6 +41,8 @@ namespace ClubFromage
             unPays.setNom("France");
             undaoPays.Update(unPays);
             ///undaofromage.Insert(camenbert);
+
+            undaoPays.InsertByFile("D:\\Axel_Groussaud\\Projets.Exercices_visual_studio\\ClubFromage\\ClubFromage\\bin\\Debug\\pays.csv");
         }
     }
 }
