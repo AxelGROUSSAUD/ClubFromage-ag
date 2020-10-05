@@ -29,7 +29,7 @@ namespace ClubFromage
             //clubfromage.Delete(reque
             Pays unPays = new Pays(4, "Belgique");
             daoPays undaoPays = new daoPays(clubfromage);
-            daoFromage undaofromage = new daoFromage(clubfromage);
+            daoFromage undaofromage = new daoFromage(clubfromage, undaoPays);
             //undaoPays.Insert(unPays);
             //DateTime unedate = new DateTime(0 , 0 , 0,15,0,0);
             //DateTime uneautredate = new DateTime(2000, 5, 25);
