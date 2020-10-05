@@ -26,20 +26,21 @@ namespace ClubFromage
             requetesql = "SELECT * FROM Pays;";
             requetesql = " Pays SET nom = 'Brezil' WHERE idPays=1 ;";
             requetesql = " Pays WHERE idPays = 1;";
-            //clubfromage.Delete(requetesql);
+            //clubfromage.Delete(reque
             Pays unPays = new Pays(4, "Belgique");
-            daoPays undaoPays = new daoPays();
-            daoFromage undaofromage = new daoFromage();
+            daoPays undaoPays = new daoPays(clubfromage);
+            daoFromage undaofromage = new daoFromage(clubfromage);
             //undaoPays.Insert(unPays);
             //DateTime unedate = new DateTime(0 , 0 , 0,15,0,0);
             //DateTime uneautredate = new DateTime(2000, 5, 25);
             //Console.WriteLine(unedate);
-            DateTime DureeAffinage = new DateTime(0, 0, 0, 15, 0, 0);
-            DateTime DateCreation = new DateTime(2000, 5, 25);
-            Fromage camenbert = new Fromage(15, 4, "camenbert", DureeAffinage,DateCreation, "le lait ...", "un laitier ...");
+            ///DateTime DureeAffinage = new DateTime(0, 0, 0, 15, 0, 0);
+            ///DateTime DateCreation = new DateTime(2000, 5, 25);
+            ///Fromage camenbert = new Fromage(15, 4, "camenbert", DureeAffinage,DateCreation, "le lait ...", "un laitier ...");
             //undaoPays.Delete(unPays);
-
-            undaofromage.Insert(camenbert);
+            unPays.setNom("France");
+            undaoPays.Update(unPays);
+            ///undaofromage.Insert(camenbert);
         }
     }
 }

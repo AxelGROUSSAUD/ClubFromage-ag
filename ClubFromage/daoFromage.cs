@@ -8,11 +8,16 @@ namespace ClubFromage
 {
     class daoFromage
     {
-        DBAL dbalfromage = new DBAL();
+        private DBAL _DBAL;
+
+        public daoFromage(DBAL unDBAL)
+        {
+            _DBAL = unDBAL;
+        }
         public void Insert(Fromage unFromage)
         {
             string query = "Fromage VALUES " + "(" + unFromage.getIdentifiant() + "," + unFromage.getIdPays() + ",'"+unFromage.getNom()+"','"+unFromage.getDureeAffinage()+"','"+unFromage.getDateCreation()+"','"+unFromage.getImage()+"','"+unFromage.getRecette()+"','"+unFromage.getHistoire()+"');";
-            dbalfromage.Insert(query);
+            this._DBAL.Insert(query);
         }
 
         public void Update()
@@ -23,7 +28,7 @@ namespace ClubFromage
         public void Delete(Fromage unFromage)
         {
             string query = "Fromage WHERE identifiant = " + unFromage.getIdentifiant() + ";";
-            dbalfromage.Delete(query);
+            this._DBAL.Delete(query);
         }
     }
 }
