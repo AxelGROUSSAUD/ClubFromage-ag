@@ -19,54 +19,66 @@ namespace ClubFromage
         }
         public void Insert(Fromage unFromage)
         {
-            string query = "Fromage VALUES " + "(" + unFromage.getIdentifiant() + "," + unFromage.getIdPays() + ",'"+unFromage.getNom()+"','"+unFromage.getDureeAffinage()+"','"+unFromage.getDateCreation()+"','"+unFromage.getImage()+"','"+unFromage.getRecette()+"','"+unFromage.getHistoire()+"');";
+            string query = "Fromage VALUES " + "(" + unFromage.Identifiant + "," + unFromage.IdPays + ",'"+unFromage.Nom+"','"+unFromage.DureeAffinage+"','"+unFromage.DateCreation+"','"+unFromage.Image+"','"+unFromage.Recette+"','"+unFromage.Histoire+"');";
             this._DBAL.Insert(query);
         }
 
         public void Update(Fromage unFromage)
         {
-            string query = "Fromage SET identifiant = " + unFromage.getIdentifiant() + ", idPays = " + unFromage.getIdPays() + ", nom = '"+unFromage.getNom()+"' , DureeAffinage = '"+unFromage.getDureeAffinage()+"', DateCreation = '"+unFromage.getDateCreation()+"', image = '"+unFromage.getImage()+"', recette = '"+unFromage.getRecette()+"', histoire = '"+unFromage.getHistoire()+"' WHERE identifiant = " + unFromage.getIdentifiant() + " ;";
+            string query = "Fromage SET identifiant = " + unFromage.Identifiant + ", idPays = " + unFromage.IdPays + ", nom = '"+unFromage.Nom+"' , DureeAffinage = '"+unFromage.DureeAffinage+"', DateCreation = '"+unFromage.DateCreation+"', image = '"+unFromage.Image+"', recette = '"+unFromage.Recette+"', histoire = '"+unFromage.Histoire+"' WHERE identifiant = " + unFromage.Identifiant + " ;";
             this._DBAL.Update(query);
         }
 
         public void Delete(Fromage unFromage)
         {
-            string query = "Fromage WHERE identifiant = " + unFromage.getIdentifiant() + ";";
+            string query = "Fromage WHERE identifiant = " + unFromage.Identifiant + ";";
             this._DBAL.Delete(query);
         }
 
         public List<Fromage> SelectAll()
         {
             List<Fromage> unelistefromage = new List<Fromage>();
-            DataTable unDataTable = _DBAL.SelectAll("Pays");
+            DataTable unDataTable = _DBAL.SelectAll("Fromage");
             foreach (DataRow dtr in unDataTable.Rows)
             {
-                Fromage unFromage = new Fromage();
+                Fromage unFromage = new Fromage((int)dtr["identifiant"], (int)dtr["idPays"], (string)dtr["nom"],(DateTime)dtr["DureeAffinage"], (DateTime)dtr["DateCreation"], (string)dtr["image"], (string)dtr["recette"], (string)dtr["histoire"]);
                 unelistefromage.Add(unFromage);
             }
             return unelistefromage;
         }
 
-        public Pays SelectByName(string namePays)
+        public Fromage SelectByName(string name)
         {
-            Pays unPays = new Pays();
-            DataTable unDataTable = _DBAL.SelectByField("Pays", "nom = '" + namePays + "';");
+            Fromage unFromage = new Fromage();
+            DataTable unDataTable = _DBAL.SelectByField("Fromage", "nom = '" + name + "';");
             DataRow dtr = unDataTable.Rows[0];
-            unPays.IdPays = int.Parse(dtr["idPays"].ToString());
-            unPays.Nom = dtr["nom"].ToString();
-            return unPays;
+            unFromage.Identifiant = (int)dtr["identifiant"];
+            unFromage.IdPays = (int)dtr["idPays"];
+            unFromage.Nom = (string)dtr["nom"];
+            unFromage.DureeAffinage = (DateTime)dtr["DureeAffinage"];
+            unFromage.DateCreation = (DateTime)dtr["DateCreation"];
+            unFromage.Image = (string)dtr["image"];
+            unFromage.Recette = (string)dtr["recette"];
+            unFromage.Histoire = (string)dtr["histoire"];
+            return unFromage;
         }
 
-        public Pays SelectById(int idPays)
+        public Fromage SelectById(int id)
         {
-            Pays unPays = new Pays();
-            DataTable unDataTable = _DBAL.SelectByField("Pays", "idPays = '" + idPays + "';");
+            Fromage unFromage = new Fromage();
+            DataTable unDataTable = _DBAL.SelectByField("Fromage", "identifiant = '" + id + "';");
             DataRow dtr = unDataTable.Rows[0];
-            unPays.IdPays = int.Parse(dtr["idPays"].ToString());
-            unPays.Nom = dtr["nom"].ToString();
-            return unPays;
+            unFromage.Identifiant = (int)dtr["identifiant"];
+            unFromage.IdPays = (int)dtr["idPays"];
+            unFromage.Nom = (string)dtr["nom"];
+            unFromage.DureeAffinage = (DateTime)dtr["DureeAffinage"];
+            unFromage.DateCreation = (DateTime)dtr["DateCreation"];
+            unFromage.Image = (string)dtr["image"];
+            unFromage.Recette = (string)dtr["recette"];
+            unFromage.Histoire = (string)dtr["histoire"];
+            return unFromage;
         }
     }
 
 }
-}
+

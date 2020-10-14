@@ -38,7 +38,7 @@ namespace ClubFromage
             //Console.WriteLine(unedate);
             ///DateTime DureeAffinage = new DateTime(0, 0, 0, 15, 0, 0);
             ///DateTime DateCreation = new DateTime(2000, 5, 25);
-            ///Fromage camenbert = new Fromage(15, 4, "camenbert", DureeAffinage,DateCreation, "le lait ...", "un laitier ...");
+            ///Fromage camenbert = new Fromage(15, 4, "camenbert", DureeAffinage,DateCreation,"", "le lait ...", "un laitier ...");
             //undaoPays.Delete(unPays);
             unPays.Nom = "France";
             //undaoPays.Update(unPays);

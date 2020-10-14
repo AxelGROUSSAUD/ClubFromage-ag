@@ -17,14 +17,14 @@ namespace ClubFromage
         private string _recette;
         private string _histoire;
 
-        public Fromage(int unIdentifiant,int unIdPays, string unNom, DateTime uneDureeAffinage, DateTime uneDateCreation,string uneRecette , string uneHistoire  )
+        public Fromage(int unIdentifiant,int unIdPays, string unNom, DateTime uneDureeAffinage, DateTime uneDateCreation,string uneImage ,string uneRecette , string uneHistoire  )
         {
             _identifiant = unIdentifiant;
             _idPays = unIdPays;
             _nom = unNom;
             _DureeAffinage = uneDureeAffinage;
             _DateCreation = uneDateCreation;
-            _image = "";
+            _image = uneImage;
             _recette = uneRecette;
             _histoire = uneHistoire;
 
@@ -35,93 +35,28 @@ namespace ClubFromage
             _identifiant = 0;
             _idPays = 0;
             _nom = "";
-            _DureeAffinage = uneDureeAffinage;
-            _DateCreation = uneDateCreation;
+            _DureeAffinage = new DateTime();
+            _DateCreation = new DateTime();
             _image = "";
-            _recette = uneRecette;
-            _histoire = uneHistoire;
-        }
-
-        public int getIdentifiant()
-        {
-            return _identifiant;
-        }
-
-        public int getIdPays()
-        {
-            return _idPays;
-        }
-
-        public string getNom()
-        {
-            return _nom;
-        }
-
-        public DateTime getDureeAffinage()
-        {
-            return _DureeAffinage;
-        }
-
-        public DateTime getDateCreation()
-        {
-            return _DateCreation;
+            _recette = "";
+            _histoire = "";
         }
 
 
-        public string getImage()
-        {
-            return _image;
-        }
+        public int Identifiant { get => _identifiant; set => _identifiant = value; }
 
-        public string getRecette()
-        {
-            return _recette;
-        }
+        public int IdPays { get => _idPays; set => _idPays = value; }
 
-        public string getHistoire()
-        {
-            return _histoire;
-        }
+        public string Nom { get => _nom; set => _nom = value; }
 
+        public DateTime DureeAffinage { get => _DureeAffinage; set => _DureeAffinage = value; }
 
-        public void setIdentifiant(int unIdentifiant)
-        {
-            _identifiant = unIdentifiant;
-        }
+        public DateTime DateCreation { get => _DateCreation; set => _DateCreation = value; }
 
-        public void setIdPays(int unIdPays)
-        {
-            _idPays = unIdPays;
-        }
+        public string Image { get => _image; set => _image = value; }
 
-        public void setNom(string unNom)
-        {
-            _nom = unNom;
-        }
+        public string Recette { get => _recette; set => _recette = value; }
 
-        public void setDureeAffinage(DateTime uneDureeAffinage)
-        {
-            _DureeAffinage = uneDureeAffinage;
-        }
-
-        public void setDateCreation(DateTime uneDateCreation)
-        {
-            _DateCreation = uneDateCreation;
-        }
-
-        public void setImage(string uneImage)
-        {
-            _image = uneImage;
-        }
-
-        public void setRecette(string uneRecette)
-        {
-            _recette = uneRecette;
-        }
-
-        public void setHistoire(string uneHistoire)
-        {
-            _histoire = uneHistoire;
-        }
+        public string Histoire { get => _histoire; set => _histoire = value; }
     }
 }

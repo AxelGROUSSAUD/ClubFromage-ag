@@ -21,7 +21,7 @@ namespace ClubFromage
         }
         public void Insert(Pays unPays)
         {
-            string query = "Pays VALUES " + "(" + unPays.IdPays + ",'" + unPays.Nom + "');";
+            string query = "Pays VALUES " + "(" + unPays.IdPays + ",'" + unPays.Nom.Replace("'","''") + "');";
             this._DBAL.Insert(query);
         }
 
@@ -60,7 +60,7 @@ namespace ClubFromage
             DataTable unDataTable = _DBAL.SelectAll("Pays");
             foreach (DataRow dtr in unDataTable.Rows)
             {
-                Pays unPays = new Pays(int.Parse(dtr["idPays"].ToString()),dtr["nom"].ToString());
+                Pays unPays = new Pays((int)dtr["idPays"],(string)dtr["nom"]);
                 unelistepays.Add(unPays);
             }
             return unelistepays;
@@ -71,8 +71,8 @@ namespace ClubFromage
             Pays unPays = new Pays();
             DataTable unDataTable = _DBAL.SelectByField("Pays","nom = '"+namePays+"';");
             DataRow dtr = unDataTable.Rows[0];
-            unPays.IdPays = int.Parse(dtr["idPays"].ToString());
-            unPays.Nom = dtr["nom"].ToString();
+            unPays.IdPays = (int)dtr["idPays"];
+            unPays.Nom = (string)dtr["nom"];
             return unPays;
         }
 
@@ -81,8 +81,8 @@ namespace ClubFromage
             Pays unPays = new Pays();
             DataTable unDataTable = _DBAL.SelectByField("Pays", "idPays = '" + idPays + "';");
             DataRow dtr = unDataTable.Rows[0];
-            unPays.IdPays = int.Parse(dtr["idPays"].ToString());
-            unPays.Nom = dtr["nom"].ToString();
+            unPays.IdPays = (int)dtr["idPays"];
+            unPays.Nom = (string)dtr["nom"];
             return unPays;
         }
     }
