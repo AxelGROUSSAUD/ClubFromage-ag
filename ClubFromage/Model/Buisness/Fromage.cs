@@ -30,6 +30,18 @@ namespace ClubFromage
 
         }
 
+        public Fromage()
+        {
+            _identifiant = 0;
+            _idPays = 0;
+            _nom = "";
+            _DureeAffinage = uneDureeAffinage;
+            _DateCreation = uneDateCreation;
+            _image = "";
+            _recette = uneRecette;
+            _histoire = uneHistoire;
+        }
+
         public int getIdentifiant()
         {
             return _identifiant;

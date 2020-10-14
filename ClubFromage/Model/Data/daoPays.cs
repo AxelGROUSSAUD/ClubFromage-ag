@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using CsvHelper;
 using System.Globalization;
 using Ubiety.Dns.Core.Records;
+using System.Data;
 
 namespace ClubFromage
 {
@@ -51,6 +52,38 @@ namespace ClubFromage
                     Insert(p);
                 }
             }
+        }
+
+        public List<Pays> SelectAll()
+        {
+            List<Pays> unelistepays = new List<Pays>();
+            DataTable unDataTable = _DBAL.SelectAll("Pays");
+            foreach (DataRow dtr in unDataTable.Rows)
+            {
+                Pays unPays = new Pays(int.Parse(dtr["idPays"].ToString()),dtr["nom"].ToString());
+                unelistepays.Add(unPays);
+            }
+            return unelistepays;
+        }
+
+        public Pays SelectByName(string namePays)
+        {
+            Pays unPays = new Pays();
+            DataTable unDataTable = _DBAL.SelectByField("Pays","nom = '"+namePays+"';");
+            DataRow dtr = unDataTable.Rows[0];
+            unPays.IdPays = int.Parse(dtr["idPays"].ToString());
+            unPays.Nom = dtr["nom"].ToString();
+            return unPays;
+        }
+
+        public Pays SelectById(int idPays)
+        {
+            Pays unPays = new Pays();
+            DataTable unDataTable = _DBAL.SelectByField("Pays", "idPays = '" + idPays + "';");
+            DataRow dtr = unDataTable.Rows[0];
+            unPays.IdPays = int.Parse(dtr["idPays"].ToString());
+            unPays.Nom = dtr["nom"].ToString();
+            return unPays;
         }
     }
 }

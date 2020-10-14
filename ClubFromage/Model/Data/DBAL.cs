@@ -191,12 +191,36 @@ namespace ClubFromage
         private DataSet RQuery( string query)
         {
             DataSet unDataSet = new DataSet();
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            adapter.SelectCommand = new MySqlCommand(query, connection);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query,connection);
+            
             adapter.Fill(unDataSet);
             return unDataSet;
         }
 
-        
+        public DataTable SelectAll(string table)
+        {
+            
+            string query = "SELECT * FROM " + table;
+            DataSet unDataSet = this.RQuery(query);
+            DataTable unDataTable = unDataSet.Tables[0];
+            return unDataTable;
+        }
+
+        public DataTable SelectByField(string table, string fieldTestCondition)
+        {
+            string query = "SELECT * FROM " + table+" WHERE "+fieldTestCondition;
+            DataSet unDataSet = this.RQuery(query);
+            DataTable unDataTable = unDataSet.Tables[0];
+            return unDataTable;
+        }
+
+        public DataRow SelectById(string table, int id)
+        {
+            string query = "SELECT * FROM " + table + " WHERE idPays = '" + id + "';";
+            DataSet unDataSet = this.RQuery(query);
+            DataTable unDataTable = unDataSet.Tables[0];
+            DataRow unDataRow = unDataTable.Rows[0];
+            return unDataRow;
+        }
     }
 }

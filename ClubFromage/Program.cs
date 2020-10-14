@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Org.BouncyCastle.Crypto.Digests;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,9 +44,33 @@ namespace ClubFromage
             //undaoPays.Update(unPays);
             ///undaofromage.Insert(camenbert);
 
-            //undaoPays.InsertByFile("D:\\Axel_Groussaud\\Projets.Exercices_visual_studio\\Club_Fromage\\ClubFromage\\bin\\Debug\\pays.csv");
-            clubfromage
-            
+            //undaoPays.InsertByFile("D:\\Axel_Groussaud\\Projets.Exercices_visual_studio\\Club_Fromage\\ClubFromage\\pays.csv");
+
+            /*DataSet mondataset = clubfromage.RQuery("SELECT * FROM Pays;");
+            foreach (DataRow dtr in mondataset.Tables[0].Rows)
+            {
+                Console.WriteLine(dtr["nom"]);
+            }*/
+            /*DataTable unDataTableAll = clubfromage.SelectAll("Pays");
+            foreach(DataRow dtr in unDataTableAll.Rows)
+            {
+                Console.WriteLine(dtr["nom"]);
+            }*/
+            //DataTable unDataTablebyfield = clubfromage.SelectByField("Pays", "nom LIKE 'G%';");
+            //foreach (DataRow dtr in unDataTablebyfield.Rows)
+            //{
+            //    Console.WriteLine(dtr["nom"]);
+            //}
+
+            //Console.WriteLine(clubfromage.SelectById("Pays", 52)["nom"]);
+            //List < Pays > unelistePays = undaoPays.SelectAll();
+            //foreach (Pays p in unelistePays)
+            //{
+            //    Console.WriteLine(p.Nom);
+            //}
+
+            Console.WriteLine(undaoPays.SelectByName("Greece").IdPays +"   "+ undaoPays.SelectByName("Greece").Nom);
+            Console.WriteLine(undaoPays.SelectById(15).IdPays + "   " + undaoPays.SelectById(15).Nom);
         }
     }
 }
