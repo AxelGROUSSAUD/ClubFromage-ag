@@ -20,27 +20,30 @@ namespace ClubFromage
         }
         public void Insert(Pays unPays)
         {
-            string query = "Pays VALUES " + "(" + unPays.getIdPays() + ",'" + unPays.getNom() + "');";
+            string query = "Pays VALUES " + "(" + unPays.IdPays + ",'" + unPays.Nom + "');";
             this._DBAL.Insert(query);
         }
 
         public void Update(Pays unPays)
         {
-            string query = "Pays SET idPays = " + unPays.getIdPays() + ", nom = '" + unPays.getNom() + "' WHERE idPays = " + unPays.getIdPays()+" ;";
+            string query = "Pays SET idPays = " + unPays.IdPays + ", nom = '" + unPays.Nom + "' WHERE idPays = " + unPays.IdPays+" ;";
             this._DBAL.Update(query);
         }
 
         public void Delete(Pays unPays)
         {
-            string query = "Pays WHERE idPays = " + unPays.getIdPays()+";";
+            string query = "Pays WHERE idPays = " + unPays.IdPays+";";
             this._DBAL.Delete(query);
         }
 
         public void InsertByFile(string Chemin)
         {
+
             using (var reader = new StreamReader(Chemin)) 
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
+                csv.Configuration.Delimiter = ";";
+                csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
                 var record = new Pays();
                 var records = csv.EnumerateRecords(record);
                 foreach (Pays p in records)

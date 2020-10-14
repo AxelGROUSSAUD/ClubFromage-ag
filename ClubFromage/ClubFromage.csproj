@@ -100,11 +100,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="daoFromage.cs" />
-    <Compile Include="Fromage.cs" />
-    <Compile Include="daoPays.cs" />
-    <Compile Include="Pays.cs" />
-    <Compile Include="DBAL.cs" />
+    <Compile Include="Model\Data\daoFromage.cs" />
+    <Compile Include="Model\Buisness\Fromage.cs" />
+    <Compile Include="Model\Data\daoPays.cs" />
+    <Compile Include="Model\Buisness\Pays.cs" />
+    <Compile Include="Model\Data\DBAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -112,5 +112,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

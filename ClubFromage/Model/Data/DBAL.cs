@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -185,6 +186,15 @@ namespace ClubFromage
                 //close connection
                 this.CloseConnection();
             }
+        }
+
+        private DataSet RQuery( string query)
+        {
+            DataSet unDataSet = new DataSet();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            adapter.SelectCommand = new MySqlCommand(query, connection);
+            adapter.Fill(unDataSet);
+            return unDataSet;
         }
 
         

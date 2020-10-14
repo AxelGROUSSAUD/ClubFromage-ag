@@ -38,11 +38,13 @@ namespace ClubFromage
             ///DateTime DateCreation = new DateTime(2000, 5, 25);
             ///Fromage camenbert = new Fromage(15, 4, "camenbert", DureeAffinage,DateCreation, "le lait ...", "un laitier ...");
             //undaoPays.Delete(unPays);
-            unPays.setNom("France");
-            undaoPays.Update(unPays);
+            unPays.Nom = "France";
+            //undaoPays.Update(unPays);
             ///undaofromage.Insert(camenbert);
 
-            undaoPays.InsertByFile("D:\\Axel_Groussaud\\Projets.Exercices_visual_studio\\ClubFromage\\ClubFromage\\bin\\Debug\\pays.csv");
+            //undaoPays.InsertByFile("D:\\Axel_Groussaud\\Projets.Exercices_visual_studio\\Club_Fromage\\ClubFromage\\bin\\Debug\\pays.csv");
+            clubfromage
+            
         }
     }
 }

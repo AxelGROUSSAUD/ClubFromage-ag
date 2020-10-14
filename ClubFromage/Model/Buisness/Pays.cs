@@ -26,25 +26,11 @@ namespace ClubFromage
 
         }
 
-        public int getIdPays()
-        {
-            return _idPays;
+        public int IdPays { get => _idPays; set => _idPays = value; }
 
-        }
 
-        public string getNom()
-        {
-            return _nom;
-        }
+        public string Nom { get => _nom; set => _nom = value; }
 
-        public void setIdPays(int unIdPays)
-        {
-            _idPays = unIdPays;
-        }
 
-        public void setNom(string unNom)
-        {
-            _nom = unNom;
-        }
     }
 }
